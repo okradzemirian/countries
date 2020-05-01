@@ -1,4 +1,5 @@
 import React from 'react'
+import './CountryItem.scss'
 
 const CountryItem = ({ flag, name, region, population, capital }) => (
     <div>

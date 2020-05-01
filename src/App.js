@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import CountryItem from './components/CountryItem/CountryItem'
+import CountryList from './components/CountryList/CountryList'
 import './App.scss'
 
 function App() {
@@ -14,8 +14,7 @@ function App() {
 
     return (
         <div className='App'>
-            {countries &&
-                countries.map(country => <CountryItem {...country} />)}
+            <CountryList countries={countries} />
         </div>
     )
 }
