@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import CountryItem from './components/CountryItem/CountryItem'
 import './App.scss'
 
 function App() {
@@ -14,15 +15,7 @@ function App() {
     return (
         <div className='App'>
             {countries &&
-                countries.map(({ flag, name, region, population, capital }) => (
-                    <div>
-                        <img src={flag} alt={`${name} flag`} />
-                        <h2>{name}</h2>
-                        <p>Population: {population}</p>
-                        <p>Region: {region}</p>
-                        <p>Capital: {capital}</p>
-                    </div>
-                ))}
+                countries.map(country => <CountryItem {...country} />)}
         </div>
     )
 }
