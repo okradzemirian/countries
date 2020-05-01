@@ -1,0 +1,30 @@
+.country-item {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 8px rgba(#000, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.country-item__content {
+    padding: 2rem;
+}
+
+.country-item__img {
+    height: 15rem;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.country-item__name {
+    margin-bottom: 1rem;
+}
+
+.country-item__info {
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    span {
+        font-weight: 400;
+    }
+}
