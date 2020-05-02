@@ -4,6 +4,7 @@ import './RegionDropdown.scss'
 const RegionDropdown = () => {
     return (
         <select className='dropdown'>
+            <option value=''>Region</option>
             <option value='africa'>Africa</option>
             <option value='america'>America</option>
             <option value='asia'>Asia</option>
