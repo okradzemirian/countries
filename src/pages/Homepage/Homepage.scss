@@ -1,0 +1,17 @@
+.homepage {
+    display: grid;
+    grid-template-columns: 1fr 15rem;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas: 'search dropdown' 'list list';
+    grid-row-gap: 4rem;
+
+    .search-bar {
+        grid-area: search;
+    }
+    .dropdown {
+        grid-area: dropdown;
+    }
+    .country-list {
+        grid-area: list;
+    }
+}
