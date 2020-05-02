@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import CountryList from './components/CountryList/CountryList'
+import SearchBar from './components/SearchBar/SearchBar'
 import './App.scss'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 
     return (
         <div className='App'>
+            <SearchBar />
             <CountryList countries={countries} />
         </div>
     )
