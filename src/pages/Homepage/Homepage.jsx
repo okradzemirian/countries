@@ -1,22 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+
+import { selectCountries } from '../../redux/countries/countriesSelectors'
+import { fetchCountries } from '../../redux/countries/countriesActions'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import RegionDropdown from '../../components/RegionDropdown/RegionDropdown'
 import CountryList from '../../components/CountryList/CountryList'
 import './Homepage.scss'
 
-const Homepage = () => {
-    const [countries, setCountries] = useState(null)
-
+const Homepage = ({ countries, fetchCountries }) => {
     useEffect(() => {
-        axios
-            .get(
-                'https://restcountries.eu/rest/v2/all?fields=flag;name;population;region;capital;numericCode',
-            )
-            .then(res => {
-                setCountries(res.data)
-            })
-    }, [])
+        fetchCountries()
+    }, [fetchCountries])
 
     return (
         <div className='wrapper homepage'>
@@ -27,4 +23,12 @@ const Homepage = () => {
     )
 }
 
-export default Homepage
+const mapStateToProps = createStructuredSelector({
+    countries: selectCountries,
+})
+
+const mapDispatchToProps = dispatch => ({
+    fetchCountries: () => dispatch(fetchCountries()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage)
