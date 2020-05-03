@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
+import { setRegion } from '../../redux/filters/filtersActions'
 import './RegionDropdown.scss'
 
-const RegionDropdown = () => {
-    const [region, setRegion] = useState('')
-
+const RegionDropdown = ({ region, setRegion }) => {
     const handleSelect = e => {
         setRegion(e.target.value)
     }
@@ -20,4 +20,12 @@ const RegionDropdown = () => {
     )
 }
 
-export default RegionDropdown
+const mapStateToProps = state => ({
+    region: state.filters.region,
+})
+
+const mapDispatchToProps = dispatch => ({
+    setRegion: region => dispatch(setRegion(region)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegionDropdown)
