@@ -5,12 +5,14 @@ const filters = state => state.filters
 
 export const selectCountries = createSelector(
     [countries, filters],
-    (countries, filters) => {
-        if (countries.countries) {
-            return countries.countries.filter(country =>
-                country.name
-                    .toLowerCase()
-                    .includes(filters.searchText.toLowerCase()),
+    ({ countries }, { searchText, region }) => {
+        if (countries) {
+            return countries.filter(
+                country =>
+                    country.name
+                        .toLowerCase()
+                        .includes(searchText.toLowerCase()) &&
+                    country.region.toLowerCase().includes(region),
             )
         }
         return null
