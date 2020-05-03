@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+import { selectSearchText } from '../../redux/filters/filtersSelectors'
 import { setSearchText } from '../../redux/filters/filtersActions'
 import './SearchBar.scss'
 
@@ -21,8 +23,8 @@ const SearchBar = ({ searchText, setSearchText }) => {
     )
 }
 
-const mapStateToProps = state => ({
-    searchText: state.filters.searchText,
+const mapStateToProps = createStructuredSelector({
+    searchText: selectSearchText,
 })
 
 const mapDispatchToProps = dispatch => ({
