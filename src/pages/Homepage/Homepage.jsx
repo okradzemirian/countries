@@ -18,7 +18,7 @@ const Homepage = ({ countries, fetchCountries }) => {
         <div className='wrapper homepage'>
             <SearchBar />
             <RegionDropdown />
-            <CountryList countries={countries} />
+            {countries && <CountryList countries={countries} />}
         </div>
     )
 }

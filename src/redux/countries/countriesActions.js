@@ -15,7 +15,7 @@ export const fetchCountries = () => {
         dispatch(startFetchCountries())
 
         const res = await axios.get(
-            'https://restcountries.eu/rest/v2/all?fields=flag;name;population;region;capital;numericCode',
+            'https://restcountries.eu/rest/v2/all?fields=flag;name;population;region;capital;alpha2Code',
         )
 
         dispatch(setCountries(res.data))
