@@ -1,29 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+import { fetchCountry } from '../../redux/country/countryActions'
+
+import { selectCountry } from '../../redux/country/countrySelectors'
 import Country from '../../components/Country/Country'
-import axios from 'axios'
 import './Countrypage.scss'
 
-const Countrypage = ({ match }) => {
-    const [country, setCountry] = useState(null)
-
+const Countrypage = ({ match, country, fetchCountry }) => {
     const { countryName } = match.params
 
     useEffect(() => {
-        axios
-            .get(
-                `https://restcountries.eu/rest/v2/name/${countryName}/?fullText=true`,
-            )
-            .then(res => {
-                setCountry(res.data[0])
-            })
-            .catch(err => {
-                console.log(err)
-            })
-
-        return () => {
-            setCountry(null)
-        }
-    }, [countryName])
+        fetchCountry(countryName)
+    }, [fetchCountry, countryName])
 
     return (
         <div className='wrapper'>
@@ -32,4 +21,12 @@ const Countrypage = ({ match }) => {
     )
 }
 
-export default Countrypage
+const mapStateToProps = createStructuredSelector({
+    country: selectCountry,
+})
+
+const mapDispatchToProps = dispatch => ({
+    fetchCountry: countryName => dispatch(fetchCountry(countryName)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Countrypage)
