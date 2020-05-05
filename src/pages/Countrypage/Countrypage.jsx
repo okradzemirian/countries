@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Country from '../../components/Country/Country'
 import axios from 'axios'
 import './Countrypage.scss'
 
@@ -24,7 +25,11 @@ const Countrypage = ({ match }) => {
         }
     }, [countryName])
 
-    return <div>Detailed Country Page</div>
+    return (
+        <div className='wrapper'>
+            {country && <Country country={country} />}
+        </div>
+    )
 }
 
 export default Countrypage
