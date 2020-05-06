@@ -8,6 +8,8 @@
     padding: 0.5rem;
     box-shadow: 0 0 8px rgba(var(--shadow), 0.15);
     border: none;
+    background-color: var(--bg-contrast);
+    color: var(--text-color);
 
     &::-ms-expand {
         display: none;

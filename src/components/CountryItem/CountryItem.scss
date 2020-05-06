@@ -6,6 +6,7 @@
     overflow: hidden;
     text-decoration: none;
     color: var(--shadow);
+    background-color: var(--bg-contrast);
 }
 
 .country-item__content {
@@ -20,6 +21,7 @@
 
 .country-item__name {
     margin-bottom: 1rem;
+    color: var(--heading-color);
 }
 
 .country-item__info {

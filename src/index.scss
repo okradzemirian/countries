@@ -11,12 +11,23 @@ html {
     box-sizing: border-box;
 }
 
-body {
+body.dark {
+    --heading-color: #fff;
+    --text-color: #fff;
+    --shadow: 34, 34, 34;
+    --bg: #232f38;
+    --bg-contrast: #2b3945;
+}
+
+body.light {
     --heading-color: #222;
     --text-color: #333;
     --shadow: 34, 34, 34;
     --bg: #fff;
+    --bg-contrast: #fff;
+}
 
+body {
     font-size: 1.6rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
         'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
