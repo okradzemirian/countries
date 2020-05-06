@@ -11,13 +11,16 @@ const setCountries = countries => ({
 })
 
 export const fetchCountries = () => {
-    return async dispatch => {
+    return async (dispatch, getState) => {
         dispatch(startFetchCountries())
+        const countries = getState().countries.countries
 
-        const res = await axios.get(
-            'https://restcountries.eu/rest/v2/all?fields=flag;name;population;region;capital;alpha3Code',
-        )
+        if (!countries) {
+            const res = await axios.get(
+                'https://restcountries.eu/rest/v2/all?fields=flag;name;population;region;capital;alpha3Code',
+            )
 
-        dispatch(setCountries(res.data))
+            dispatch(setCountries(res.data))
+        }
     }
 }
