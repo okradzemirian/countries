@@ -8,11 +8,11 @@ import Country from '../../components/Country/Country'
 import './Countrypage.scss'
 
 const Countrypage = ({ match, country, fetchCountry }) => {
-    const { countryName } = match.params
+    const { alpha3Code } = match.params
 
     useEffect(() => {
-        fetchCountry(countryName)
-    }, [fetchCountry, countryName])
+        fetchCountry(alpha3Code)
+    }, [fetchCountry, alpha3Code])
 
     return (
         <div className='wrapper'>
@@ -26,7 +26,7 @@ const mapStateToProps = createStructuredSelector({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchCountry: countryName => dispatch(fetchCountry(countryName)),
+    fetchCountry: alpha3Code => dispatch(fetchCountry(alpha3Code)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Countrypage)
