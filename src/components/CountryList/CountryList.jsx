@@ -4,8 +4,8 @@ import './CountryList.scss'
 
 const CountryList = ({ countries }) => (
     <div className='country-list'>
-        {countries.map(({ alpha2Code, ...country }) => (
-            <CountryItem key={alpha2Code} {...country} />
+        {countries.map(({ alpha3Code, ...country }) => (
+            <CountryItem key={alpha3Code} {...country} />
         ))}
     </div>
 )

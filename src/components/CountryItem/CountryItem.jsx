@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './CountryItem.scss'
 
 const CountryItem = ({ flag, name, region, population, capital }) => (
-    <div className='country-item'>
+    <Link to={`/${name}`} className='country-item'>
         <img className='country-item__img' src={flag} alt={`${name} flag`} />
 
         <div className='country-item__content'>
@@ -18,7 +19,7 @@ const CountryItem = ({ flag, name, region, population, capital }) => (
                 Capital: <span>{capital}</span>
             </p>
         </div>
-    </div>
+    </Link>
 )
 
 export default CountryItem
