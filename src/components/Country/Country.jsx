@@ -34,18 +34,18 @@ const Country = ({ country }) => {
                             <span>Native Name:</span> {nativeName}
                         </li>
                         <li className='country__info'>
-                            <span>Population: </span>
+                            <span>Population:</span>
                             {population}
                         </li>
                         <li className='country__info'>
-                            <span>Region: </span>
+                            <span>Region:</span>
                             {region}
                         </li>
                         <li className='country__info'>
                             <span>Sub Region:</span> {subregion}
                         </li>
                         <li className='country__info'>
-                            <span>Capital: </span>
+                            <span>Capital:</span>
                             {capital}
                         </li>
                     </ul>

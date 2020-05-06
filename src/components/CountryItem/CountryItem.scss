@@ -1,11 +1,11 @@
 .country-item {
     display: flex;
     flex-direction: column;
-    box-shadow: 0 1px 8px rgba(#000, 0.1);
+    box-shadow: 0 1px 8px rgba(var(--shadow), 0.1);
     border-radius: 3px;
     overflow: hidden;
     text-decoration: none;
-    color: #000;
+    color: var(--shadow);
 }
 
 .country-item__content {
@@ -25,6 +25,7 @@
 .country-item__info {
     font-size: 1.4rem;
     font-weight: 600;
+    color: var(--text-color);
 
     span {
         font-weight: 400;

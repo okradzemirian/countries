@@ -6,7 +6,8 @@
     border-radius: 5px;
     width: 100%;
     padding: 0.5rem;
-    box-shadow: 0 0 8px rgba(#000, 0.2);
+    box-shadow: 0 0 8px rgba(var(--shadow), 0.15);
+    border: none;
 
     &::-ms-expand {
         display: none;
