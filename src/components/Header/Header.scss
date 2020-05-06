@@ -9,6 +9,15 @@
     background-color: white;
 }
 
+.header__title {
+    font-size: 1.8rem;
+}
+
+.header__link {
+    text-decoration: none;
+    color: black;
+}
+
 .header__wrapper {
     display: flex;
     justify-content: space-between;
