@@ -1,0 +1,17 @@
+.dropdown {
+    appearance: none;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0.5rem;
+    box-shadow: 0 0 8px rgba(var(--shadow), 0.15);
+    border: none;
+    background-color: var(--bg-contrast);
+    color: var(--text-color);
+
+    &::-ms-expand {
+        display: none;
+    }
+}
