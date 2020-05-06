@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Country.scss'
 
 const Country = ({ country }) => {
@@ -78,9 +79,14 @@ const Country = ({ country }) => {
                 <div className='borders'>
                     <h4 className='borders__title'>Borders:</h4>
                     <ul className='borders__list'>
-                        {borders.map(country => (
-                            <li key={country} className='borders__item'>
-                                {country}
+                        {borders.map(alpha3Code => (
+                            <li key={alpha3Code} className='borders__item'>
+                                <Link
+                                    className='borders__link'
+                                    to={`/${alpha3Code}`}
+                                >
+                                    {alpha3Code}
+                                </Link>
                             </li>
                         ))}
                     </ul>
